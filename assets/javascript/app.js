@@ -15,6 +15,7 @@ var timer = setInterval(function () {
 
 //Game score
 var score = 0;
+var loss = 0;
 
 //Questions and answers Object
 var questions = [
@@ -26,7 +27,7 @@ var questions = [
 
     {
         q1: "Rap was just becoming well known in the 90s. Which artist had the first number one rap single?",
-        answers1: ["Marky Mark", "MC Hammer", "Vanills Ice"],
+        answers1: ["Marky Mark", "MC Hammer", "Vanilla Ice"],
         correctAnswer1: 2,
     },
 
@@ -55,32 +56,72 @@ var questions = [
     //Loading questions to page
         $('#questions').append(questions[0].q0 + '<br>');
         $('#questions').append('<input type="radio" name="radio_name" id="q00" />' + questions[0].answers0[0]+"  ");
-        $('#questions').append('<input type="radio" name="radio_name" "id="q01" />' + questions[0].answers0[1]+"  ");
-        $('#questions').append('<input type="radio" name="radio_name" />' + questions[0].answers0[2] + '<br>'+'<br>');
+        $('#questions').append('<input type="radio" name="radio_name" id="q01" />' + questions[0].answers0[1]+"  ");
+        $('#questions').append('<input type="radio" name="radio_name" id="q02" />' + questions[0].answers0[2] + '<br>'+'<br>');
+       
+    //    $("#q00").click(function() {
+    //        $(this).data('clicked', true);
+    //    });
 
-        $('#questions').append(questions[1].q1 + '<br>');
-        $('#questions').append('<input type="radio" name="radio_name" />' + questions[1].answers1[0]+"  ");
-        $('#questions').append('<input type="radio" name="radio_name" />' + questions[1].answers1[1]+"  ");
-        $('#questions').append('<input type="radio" name="radio_name" />' + questions[1].answers1[2] + '<br>'+'<br>');
+    //    if($("#q00").data('clicked')) {
+    //        score++;
+    //        console.log(score);
+    //    };
 
-        $('#questions').append(questions[2].q2 + '<br>');
-        $('#questions').append('<input type="radio" name="radio_name" />' + questions[2].answers2[0]+"  ");
-        $('#questions').append('<input type="radio" name="radio_name" />' + questions[2].answers2[1]+"  ");
-        $('#questions').append('<input type="radio" name="radio_name" />' + questions[2].answers2[2] + '<br>'+'<br>');
 
-        $('#questions').append(questions[3].q3 + '<br>');
-        $('#questions').append('<input type="radio" name="radio_name" />' + questions[3].answers3[0]+"  ");
-        $('#questions').append('<input type="radio" name="radio_name" />' + questions[3].answers3[1]+"  ");
-        $('#questions').append('<input type="radio" name="radio_name" />' + questions[3].answers3[2] + '<br>'+'<br>');
-
-        $('#questions').append(questions[4].q4 + '<br>');
-        $('#questions').append('<input type="radio" name="radio_name" />' + questions[4].answers4[0]+"  ");
-        $('#questions').append('<input type="radio" name="radio_name" />' + questions[4].answers4[1]+"  ");
-        $('#questions').append('<input type="radio" name="radio_name" />' + questions[4].answers4[2] + '<br>'+'<br>');
-
-        if (document.getElementById("#q00").checked) {
+        $("#q00").on("click", function () {
             score++;
             console.log(score);
+            if ($("#q01").data('clicked', true)) {
+                loss++;
+                console.log(loss);
+            }
+
+
+        });
+        $('#questions').append(questions[1].q1 + '<br>');
+        $('#questions').append('<input type="radio" name="radio_name" id="q10" />' + questions[1].answers1[0]+"  ");
+        $('#questions').append('<input type="radio" name="radio_name" id="q11" />'  + questions[1].answers1[1]+"  ");
+        $('#questions').append('<input type="radio" name="radio_name" id="q12" />' + questions[1].answers1[2] + '<br>'+'<br>');
+        
+        $("#q12").on("click", function () {
+            score++;
+            console.log(score);
+
+        });
+        $('#questions').append(questions[2].q2 + '<br>');
+        $('#questions').append('<input type="radio" name="radio_name" id="q20" />' + questions[2].answers2[0]+"  ");
+        $('#questions').append('<input type="radio" name="radio_name" id="q21" />' + questions[2].answers2[1]+"  ");
+        $('#questions').append('<input type="radio" name="radio_name" id="q22" />' + questions[2].answers2[2] + '<br>'+'<br>');
+       
+        $("#q21").on("click", function () {
+            score++;
+            console.log(score);
+
+        });
+        $('#questions').append(questions[3].q3 + '<br>');
+        $('#questions').append('<input type="radio" name="radio_name" id="q30" />' + questions[3].answers3[0]+"  ");
+        $('#questions').append('<input type="radio" name="radio_name" id="q31" />' + questions[3].answers3[1]+"  ");
+        $('#questions').append('<input type="radio" name="radio_name" id="q32" />' + questions[3].answers3[2] + '<br>'+'<br>');
+        
+        $("#q30").on("click", function () {
+            score++;
+            console.log(score);
+
+        });
+        $('#questions').append(questions[4].q4 + '<br>');
+        $('#questions').append('<input type="radio" name="radio_name" id="q40" />' + questions[4].answers4[0]+"  ");
+        $('#questions').append('<input type="radio" name="radio_name" id="q41" />' + questions[4].answers4[1]+"  ");
+        $('#questions').append('<input type="radio" name="radio_name" id="q42" />' + questions[4].answers4[2] + '<br>'+'<br>');
+       
+        $("#q41").on("click", function () {
+            score++;
+            console.log(score);
+            
+        });
+      
+                if(score === 5) {
+            console.log("You know your stuff!");
         };
 
     //     }
