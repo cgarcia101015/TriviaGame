@@ -72,12 +72,10 @@ var questions = [
         $("#q00").on("click", function () {
             score++;
             console.log(score);
-            if ($("#q01").data('clicked', true)) {
+            if ($("#q01" || "#q02").data('clicked', true)) {
                 loss++;
                 console.log(loss);
             }
-
-
         });
         $('#questions').append(questions[1].q1 + '<br>');
         $('#questions').append('<input type="radio" name="radio_name" id="q10" />' + questions[1].answers1[0]+"  ");
@@ -117,12 +115,12 @@ var questions = [
         $("#q41").on("click", function () {
             score++;
             console.log(score);
+            alert("You got " + score + " questions correct!");
+            
+      
             
         });
-      
-                if(score === 5) {
-            console.log("You know your stuff!");
-        };
+    
 
     //     }
     // };
