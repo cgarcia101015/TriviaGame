@@ -49,76 +49,69 @@ var questions = [
         correctAnswer4: 1,
     },
 ];
+var response = {
+    q0:null,
+    q1:null,
+    q2:null,
+    q3:null,
+    q4:null
+};
 
-// function loadTrivia() {
-//     for (i = 0; i <=5; i++) {
 
-    //Loading questions to page
-        $('#questions').append(questions[0].q0 + '<br>');
-        $('#questions').append('<input type="radio" name="radio_name" id="q00" />' + questions[0].answers0[0]+"  ");
-        $('#questions').append('<input type="radio" name="radio_name" id="q01" />' + questions[0].answers0[1]+"  ");
-        $('#questions').append('<input type="radio" name="radio_name" id="q02" />' + questions[0].answers0[2] + '<br>'+'<br>');
+
+
+        $('#questions').append('<form id=q0>' + questions[0].q0 + '<br>');
+        $('#q0').append('<input type="radio" name="radio_name0" id="q00" value="0"/>' + questions[0].answers0[0]+"  ");
+        $('#q0').append('<input type="radio" name="radio_name0" id="q01" value="1"/>' + questions[0].answers0[1]+"  ");
+        $('#q0').append('<input type="radio" name="radio_name0" id="q02" value="2"/>' + questions[0].answers0[2] + '<br>'+'<br>');
        
-    //    $("#q00").click(function() {
-    //        $(this).data('clicked', true);
-    //    });
+    
+    $('#q0 input').on("change", function () {
+       response.q0 = parseInt($('input:checked', '#q0').val());
+       console.log(response)
+    });
 
-    //    if($("#q00").data('clicked')) {
-    //        score++;
-    //        console.log(score);
-    //    };
-
-
-        $("#q00").on("click", function () {
-            score++;
-            console.log(score);
-            if ($("#q01" || "#q02").data('clicked', true)) {
-                loss++;
-                console.log(loss);
-            }
-        });
-        $('#questions').append(questions[1].q1 + '<br>');
-        $('#questions').append('<input type="radio" name="radio_name" id="q10" />' + questions[1].answers1[0]+"  ");
-        $('#questions').append('<input type="radio" name="radio_name" id="q11" />'  + questions[1].answers1[1]+"  ");
-        $('#questions').append('<input type="radio" name="radio_name" id="q12" />' + questions[1].answers1[2] + '<br>'+'<br>');
+       
+        $('#questions').append('<form id=q1>' + questions[1].q1 + '<br>');
+        $('#q1').append('<input type="radio" name="radio_name1" id="q10" value="0"/>' + questions[1].answers1[0]+"  ");
+        $('#q1').append('<input type="radio" name="radio_name1" id="q11" value="1"/>'  + questions[1].answers1[1]+"  ");
+        $('#q1').append('<input type="radio" name="radio_name1" id="q12" value="2"/>' + questions[1].answers1[2] + '<br>'+'<br>');
         
-        $("#q12").on("click", function () {
-            score++;
-            console.log(score);
-
+        $('#q1 input').on("change", function () {
+            response.q1 = parseInt($('input:checked', '#q1').val());
+            console.log(response)
         });
-        $('#questions').append(questions[2].q2 + '<br>');
-        $('#questions').append('<input type="radio" name="radio_name" id="q20" />' + questions[2].answers2[0]+"  ");
-        $('#questions').append('<input type="radio" name="radio_name" id="q21" />' + questions[2].answers2[1]+"  ");
-        $('#questions').append('<input type="radio" name="radio_name" id="q22" />' + questions[2].answers2[2] + '<br>'+'<br>');
+
+        $('#questions').append('<form id=q2>' + questions[2].q2 + '<br>');
+        $('#q2').append('<input type="radio" name="radio_name2" id="q20" value="0"/>' + questions[2].answers2[0]+"  ");
+        $('#q2').append('<input type="radio" name="radio_name2" id="q21" value="1"/>' + questions[2].answers2[1]+"  ");
+        $('#q2').append('<input type="radio" name="radio_name2" id="q22" value="2"/>' + questions[2].answers2[2] + '<br>'+'<br>');
        
-        $("#q21").on("click", function () {
-            score++;
-            console.log(score);
-
+        $('#q2 input').on("change", function () {
+            response.q2 = parseInt($('input:checked', '#q2').val());
+            console.log(response)
         });
-        $('#questions').append(questions[3].q3 + '<br>');
-        $('#questions').append('<input type="radio" name="radio_name" id="q30" />' + questions[3].answers3[0]+"  ");
-        $('#questions').append('<input type="radio" name="radio_name" id="q31" />' + questions[3].answers3[1]+"  ");
-        $('#questions').append('<input type="radio" name="radio_name" id="q32" />' + questions[3].answers3[2] + '<br>'+'<br>');
+
+
+        $('#questions').append('<form id=q3>' + questions[3].q3 + '<br>');
+        $('#q3').append('<input type="radio" name="radio_name3" id="q30" value="0"/>' + questions[3].answers3[0]+"  ");
+        $('#q3').append('<input type="radio" name="radio_name3" id="q31" value="1"/>' + questions[3].answers3[1]+"  ");
+        $('#q3').append('<input type="radio" name="radio_name3" id="q32" value="2"/>' + questions[3].answers3[2] + '<br>'+'<br>');
         
-        $("#q30").on("click", function () {
-            score++;
-            console.log(score);
-
+        $('#q3 input').on("change", function () {
+            response.q3 = parseInt($('input:checked', '#q3').val());
+            console.log(response)
         });
-        $('#questions').append(questions[4].q4 + '<br>');
-        $('#questions').append('<input type="radio" name="radio_name" id="q40" />' + questions[4].answers4[0]+"  ");
-        $('#questions').append('<input type="radio" name="radio_name" id="q41" />' + questions[4].answers4[1]+"  ");
-        $('#questions').append('<input type="radio" name="radio_name" id="q42" />' + questions[4].answers4[2] + '<br>'+'<br>');
+
+
+        $('#questions').append('<form id=q4>' + questions[4].q4 + '<br>');
+        $('#q4').append('<input type="radio" name="radio_name4" id="q40" value="0"/>' + questions[4].answers4[0]+"  ");
+        $('#q4').append('<input type="radio" name="radio_name4" id="q41" value="1"/>' + questions[4].answers4[1]+"  ");
+        $('#q4').append('<input type="radio" name="radio_name4" id="q42" value="2"/>' + questions[4].answers4[2] + '<br>'+'<br>');
        
-        $("#q41").on("click", function () {
-            score++;
-            console.log(score);
-            alert("You got " + score + " questions correct!");
-            
-      
-            
+        $('#q4 input').on("change", function () {
+            response.q4 = parseInt($('input:checked', '#q4').val());
+            console.log(response)
         });
     
 
